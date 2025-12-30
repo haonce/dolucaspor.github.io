@@ -9,103 +9,142 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #111;
+      background: #0b0f14;
       color: #fff;
     }
 
     header {
-      background: #8b0000;
+      background: linear-gradient(90deg, #003366, #000);
       padding: 20px;
       text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      letter-spacing: 2px;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
       background: #000;
-      padding: 10px;
+      padding: 12px;
     }
 
     nav a {
-      color: #fff;
+      color: #4da6ff;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     section {
-      padding: 20px;
-      max-width: 1000px;
+      padding: 30px 20px;
+      max-width: 1100px;
       margin: auto;
+      display: none;
     }
 
-    .cards {
+    section.active {
+      display: block;
+    }
+
+    .players {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
     }
 
-    .card {
-      background: #1c1c1c;
+    .player {
+      background: #111;
+      border: 1px solid #1f3b5c;
+      border-radius: 10px;
       padding: 15px;
-      border-radius: 8px;
       text-align: center;
+    }
+
+    .player img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
 
     footer {
       background: #000;
       text-align: center;
       padding: 15px;
-      margin-top: 30px;
-      font-size: 14px;
       color: #aaa;
+      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
 </head>
 <body>
 
 <header>
   <h1>DOLUCASPOR</h1>
-  <p>Resmi Taraftar Sitesi</p>
+  <p>Mavi • Siyah</p>
 </header>
 
 <nav>
-  <a href="#anasayfa">Ana Sayfa</a>
-  <a href="#kadro">Kadro</a>
-  <a href="#fikstur">Fikstür</a>
-  <a href="#iletisim">İletişim</a>
+  <a onclick="showSection('anasayfa')">Ana Sayfa</a>
+  <a onclick="showSection('kadro')">Kadro</a>
 </nav>
 
-<section id="anasayfa">
+<section id="anasayfa" class="active">
   <h2>Hoş Geldiniz</h2>
-  <p>Dolucaspor taraftarları için hazırlanmış resmi olmayan taraftar sitesidir.</p>
+  <p>
+    Dolucaspor taraftarları için hazırlanmış resmi taraftar sitesidir.
+    Takımımızın kadrosu, maçları ve güncel bilgileri burada yer alacaktır.
+  </p>
 </section>
 
 <section id="kadro">
-  <h2>Kadro</h2>
-  <div class="cards">
-    <div class="card">Kaleci<br><strong>Ahmet</strong></div>
-    <div class="card">Defans<br><strong>Mehmet</strong></div>
-    <div class="card">Orta Saha<br><strong>Ali</strong></div>
-    <div class="card">Forvet<br><strong>Burak</strong></div>
-  </div>
-</section>
+  <h2>Takım Kadrosu</h2>
 
-<section id="fikstur">
-  <h2>Fikstür</h2>
-  <div class="cards">
-    <div class="card">Dolucaspor vs Kartalspor<br>12 Mart</div>
-    <div class="card">Aslan FK vs Dolucaspor<br>19 Mart</div>
-  </div>
-</section>
+  <div class="players">
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400" alt="">
+      <strong>Ahmet Yılmaz</strong><br>
+      Kaleci
+    </div>
 
-<section id="iletisim">
-  <h2>İletişim</h2>
-  <p>📧 dolucaspor@gmail.com</p>
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400" alt="">
+      <strong>Emre Kaya</strong><br>
+      Defans
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400" alt="">
+      <strong>Burak Demir</strong><br>
+      Orta Saha
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400" alt="">
+      <strong>Can Arslan</strong><br>
+      Forvet
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2025 Dolucaspor Taraftar Sitesi
+  © 2025 Dolucaspor | Taraftar Sitesi
 </footer>
 
 </body>
