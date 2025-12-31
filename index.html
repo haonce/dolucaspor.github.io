@@ -2,77 +2,34 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Dolucaspor</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-<style>
-body{margin:0;font-family:Arial;background:#0b0b0b;color:#fff}
-header{background:#111;padding:20px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #003cff}
-.logo{display:flex;align-items:center;gap:15px}
-.logo img{height:55px}
-nav a{color:#fff;margin-left:25px;text-decoration:none;font-weight:bold}
-nav a:hover{color:#4da6ff}
-
-.hero{height:420px;background:url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=80") center/cover;display:flex;align-items:flex-end;padding:30px}
-.hero div{background:rgba(0,0,0,.7);padding:20px}
-
-section{max-width:1100px;margin:50px auto;padding:20px}
-.news-preview div{border-bottom:1px solid #222;padding:15px 0}
-.news-preview h3{color:#4da6ff}
-
-footer{background:#000;padding:30px;text-align:center}
-footer a{color:#fff;margin:0 10px;font-size:20px}
-footer a:hover{color:#4da6ff}
-</style>
+<title>Dolucaspor Resmi Sitesi</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.png">
-    <h2>DOLUCASPOR</h2>
-  </div>
+  <img src="images/logo.png" class="logo">
   <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="haber.html">Haberler</a>
+    <a href="index.html">Anasayfa</a>
     <a href="kadro.html">Kadro</a>
+    <a href="admin.html">Admin</a>
   </nav>
 </header>
 
-<div class="hero">
-  <div>
-    <h2>Dolucaspor Sezona Hazır</h2>
-    <p>Mavi-siyahlılar yeni sezon çalışmalarını sürdürüyor.</p>
-  </div>
-</div>
-
-<section>
+<main>
   <h2>Son Haberler</h2>
-  <div class="news-preview" id="news"></div>
-</section>
+  <div id="news-list" class="news-grid"></div>
+</main>
 
 <footer>
-  <p>© 2025 Dolucaspor</p>
-  <a href="#"><i class="fab fa-instagram"></i></a>
-  <a href="#"><i class="fab fa-x-twitter"></i></a>
-  <a href="#"><i class="fab fa-youtube"></i></a>
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">X</a>
+    <a href="#">YouTube</a>
+  </div>
+  © 2025 Dolucaspor Taraftar Sitesi
 </footer>
 
-<script>
-fetch("news.json")
-.then(r=>r.json())
-.then(data=>{
-  const n=document.getElementById("news");
-  data.slice(0,3).forEach((h,i)=>{
-    n.innerHTML+=`<div>
-      <h3><a href="haber.html?id=${i}" style="color:#4da6ff">${h.title}</a></h3>
-      <p>${h.content.substring(0,100)}...</p>
-    </div>`;
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
