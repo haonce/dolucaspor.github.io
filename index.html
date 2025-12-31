@@ -1,300 +1,78 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Dolucaspor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Dolucaspor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
+<style>
+body{margin:0;font-family:Arial;background:#0b0b0b;color:#fff}
+header{background:#111;padding:20px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #003cff}
+.logo{display:flex;align-items:center;gap:15px}
+.logo img{height:55px}
+nav a{color:#fff;margin-left:25px;text-decoration:none;font-weight:bold}
+nav a:hover{color:#4da6ff}
 
-    /* HEADER */
-    header {
-      background: #111;
-      padding: 20px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 3px solid #003cff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+.hero{height:420px;background:url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=80") center/cover;display:flex;align-items:flex-end;padding:30px}
+.hero div{background:rgba(0,0,0,.7);padding:20px}
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+section{max-width:1100px;margin:50px auto;padding:20px}
+.news-preview div{border-bottom:1px solid #222;padding:15px 0}
+.news-preview h3{color:#4da6ff}
 
-    .logo-area img {
-      height: 55px;
-    }
-
-    header h1 {
-      margin: 0;
-      letter-spacing: 3px;
-      font-size: 24px;
-    }
-
-    nav a {
-      color: #fff;
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #4da6ff;
-    }
-
-    /* HERO */
-    .hero {
-      background: url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
-      height: 420px;
-      display: flex;
-      align-items: flex-end;
-      padding: 30px;
-    }
-
-    .hero-box {
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
-      max-width: 600px;
-    }
-
-    .hero-box h2 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    /* CONTENT */
-    .content {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 30px;
-    }
-
-    /* NEWS */
-    .news-item {
-      border-bottom: 1px solid #222;
-      padding: 15px 0;
-    }
-
-    .news-item span {
-      font-size: 13px;
-      color: #888;
-    }
-
-    .news-item h3 {
-      margin: 8px 0;
-      color: #4da6ff;
-    }
-
-    /* SIDE BOX */
-    .side-box {
-      background: #111;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .side-box h3 {
-      margin-top: 0;
-      border-bottom: 2px solid #003cff;
-      padding-bottom: 10px;
-    }
-
-    /* KADRO */
-    #kadro {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 20px;
-    }
-
-    .players {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .player {
-      background: #111;
-      padding: 15px;
-      text-align: center;
-      border-radius: 8px;
-    }
-
-    .player img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
-
-    .player strong {
-      display: block;
-      margin-top: 5px;
-      color: #4da6ff;
-    }
-
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-
-    @media(max-width: 900px) {
-      .content {
-        grid-template-columns: 1fr;
-      }
-
-      nav a {
-        margin-left: 15px;
-      }
-    }
-  </style>
-
-  <script>
-    async function loadNews() {
-      const res = await fetch("news.json");
-      const news = await res.json();
-      const container = document.getElementById("news");
-      container.innerHTML = "";
-
-      news.forEach(item => {
-        container.innerHTML += `
-          <div class="news-item">
-            <span>${item.date}</span>
-            <h3>${item.title}</h3>
-            <p>${item.content}</p>
-          </div>
-        `;
-      });
-    }
-
-    window.onload = loadNews;
-  </script>
+footer{background:#000;padding:30px;text-align:center}
+footer a{color:#fff;margin:0 10px;font-size:20px}
+footer a:hover{color:#4da6ff}
+</style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo-area">
-    <img src="logo.png" alt="Dolucaspor Logo">
-    <h1>DOLUCASPOR</h1>
+  <div class="logo">
+    <img src="logo.png">
+    <h2>DOLUCASPOR</h2>
   </div>
-
   <nav>
-    <a href="#anasayfa">Ana Sayfa</a>
-    <a href="#haberler">Haberler</a>
-    <a href="#kadro">Kadro</a>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="haber.html">Haberler</a>
+    <a href="kadro.html">Kadro</a>
   </nav>
 </header>
 
-<div class="hero" id="anasayfa">
-  <div class="hero-box">
-    <h2>Dolucaspor Yeni Sezona Hazır</h2>
-    <p>Mavi-siyahlılar lig öncesi çalışmalarını sürdürüyor.</p>
+<div class="hero">
+  <div>
+    <h2>Dolucaspor Sezona Hazır</h2>
+    <p>Mavi-siyahlılar yeni sezon çalışmalarını sürdürüyor.</p>
   </div>
 </div>
 
-<div class="content">
-  <div>
-    <h2 id="haberler">Haberler</h2>
-    <div id="news"></div>
-  </div>
-
-  <div>
-    <div class="side-box">
-      <h3>Sıradaki Maç</h3>
-      <p>
-        Dolucaspor vs Kartalspor<br>
-        📅 12 Mart<br>
-        🏟️ Doluca Stadı
-      </p>
-    </div>
-
-    <div class="side-box">
-      <h3>Lig Durumu</h3>
-      <p>
-        5. Sıra<br>
-        28 Puan
-      </p>
-    </div>
-  </div>
-</div>
-
-<section id="kadro">
-  <h2>Takım Kadrosu</h2>
-
-  <div class="players">
-    <div class="player">
-      <img src="https://via.placeholder.com/300x400">
-      <strong>Ekrem Karayusuf</strong>
-      Kaleci
-    </div>
-
-    <div class="player">
-      <img src="https://via.placeholder.com/300x400">
-      <strong>Mehmet Hakan Turabi</strong>
-      Defans
-    </div>
-
-    <div class="player">
-      <img src="https://via.placeholder.com/300x400">
-      <strong>Mehmet Bilal Çam</strong>
-      Defans
-    </div>
-
-    <div class="player">
-      <img src="https://via.placeholder.com/300x400">
-      <strong>Sadık Onur Bolat</strong>
-      Defans
-    </div>
-
-    <div class="player">
-      <img src="https://via.placeholder.com/300x400">
-      <strong>Hamza Özer (C)</strong>
-      Orta Saha
-    </div>
-
-    <div class="player">
-      <img src="https://via.placeholder.com/300x400">
-      <strong>Muhammet İslam Erol</strong>
-      Kanat
-    </div>
-
-    <div class="player">
-      <img src="https://via.placeholder.com/300x400">
-      <strong>Onur Çam</strong>
-      Kanat
-    </div>
-
-    <div class="player">
-      <img src="https://via.placeholder.com/300x400">
-      <strong>Özgür Düzgün</strong>
-      Forvet
-    </div>
-  </div>
+<section>
+  <h2>Son Haberler</h2>
+  <div class="news-preview" id="news"></div>
 </section>
 
 <footer>
-  © 2025 Dolucaspor
+  <p>© 2025 Dolucaspor</p>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-x-twitter"></i></a>
+  <a href="#"><i class="fab fa-youtube"></i></a>
 </footer>
+
+<script>
+fetch("news.json")
+.then(r=>r.json())
+.then(data=>{
+  const n=document.getElementById("news");
+  data.slice(0,3).forEach((h,i)=>{
+    n.innerHTML+=`<div>
+      <h3><a href="haber.html?id=${i}" style="color:#4da6ff">${h.title}</a></h3>
+      <p>${h.content.substring(0,100)}...</p>
+    </div>`;
+  });
+});
+</script>
 
 </body>
 </html>
