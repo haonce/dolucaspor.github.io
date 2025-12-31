@@ -11,6 +11,7 @@
       font-family: Arial, Helvetica, sans-serif;
       background: #0b0b0b;
       color: #fff;
+      scroll-behavior: smooth;
     }
 
     /* HEADER */
@@ -21,6 +22,9 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 3px solid #003cff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo-area {
@@ -30,18 +34,18 @@
     }
 
     .logo-area img {
-      height: 60px;
+      height: 55px;
     }
 
     header h1 {
       margin: 0;
       letter-spacing: 3px;
-      font-size: 26px;
+      font-size: 24px;
     }
 
     nav a {
       color: #fff;
-      margin-left: 30px;
+      margin-left: 25px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -110,12 +114,48 @@
       padding-bottom: 10px;
     }
 
+    /* KADRO */
+    #kadro {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .players {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .player {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .player img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .player strong {
+      display: block;
+      margin-top: 5px;
+      color: #4da6ff;
+    }
+
     footer {
       background: #000;
       text-align: center;
       padding: 20px;
       color: #777;
       font-size: 14px;
+      margin-top: 40px;
     }
 
     @media(max-width: 900px) {
@@ -134,7 +174,6 @@
       const res = await fetch("news.json");
       const news = await res.json();
       const container = document.getElementById("news");
-
       container.innerHTML = "";
 
       news.forEach(item => {
@@ -155,40 +194,36 @@
 
 <header>
   <div class="logo-area">
-    <!-- LOGO BURAYA -->
     <img src="logo.png" alt="Dolucaspor Logo">
     <h1>DOLUCASPOR</h1>
   </div>
 
   <nav>
-    <a href="#">Ana Sayfa</a>
-    <a href="#">Haberler</a>
-    <a href="#">Kadro</a>
-    <a href="#">Fikstür</a>
+    <a href="#anasayfa">Ana Sayfa</a>
+    <a href="#haberler">Haberler</a>
+    <a href="#kadro">Kadro</a>
   </nav>
 </header>
 
-<div class="hero">
+<div class="hero" id="anasayfa">
   <div class="hero-box">
     <h2>Dolucaspor Yeni Sezona Hazır</h2>
-    <p>Mavi-Siyahlılar lig öncesi hazırlıklarını sürdürüyor.</p>
+    <p>Mavi-siyahlılar lig öncesi çalışmalarını sürdürüyor.</p>
   </div>
 </div>
 
 <div class="content">
-  <!-- HABERLER -->
   <div>
-    <h2>Haberler</h2>
+    <h2 id="haberler">Haberler</h2>
     <div id="news"></div>
   </div>
 
-  <!-- SAĞ TARAF -->
   <div>
     <div class="side-box">
       <h3>Sıradaki Maç</h3>
       <p>
-        Dolucaspor vs HCAL Öğretmenler<br>
-        📅 Unclear<br>
+        Dolucaspor vs Kartalspor<br>
+        📅 12 Mart<br>
         🏟️ Doluca Stadı
       </p>
     </div>
@@ -196,12 +231,66 @@
     <div class="side-box">
       <h3>Lig Durumu</h3>
       <p>
-        1. Sıra<br>
-        99 Puan
+        5. Sıra<br>
+        28 Puan
       </p>
     </div>
   </div>
 </div>
+
+<section id="kadro">
+  <h2>Takım Kadrosu</h2>
+
+  <div class="players">
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400">
+      <strong>Ekrem Karayusuf</strong>
+      Kaleci
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400">
+      <strong>Mehmet Hakan Turabi</strong>
+      Defans
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400">
+      <strong>Mehmet Bilal Çam</strong>
+      Defans
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400">
+      <strong>Sadık Onur Bolat</strong>
+      Defans
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400">
+      <strong>Hamza Özer (C)</strong>
+      Orta Saha
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400">
+      <strong>Muhammet İslam Erol</strong>
+      Kanat
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400">
+      <strong>Onur Çam</strong>
+      Kanat
+    </div>
+
+    <div class="player">
+      <img src="https://via.placeholder.com/300x400">
+      <strong>Özgür Düzgün</strong>
+      Forvet
+    </div>
+  </div>
+</section>
 
 <footer>
   © 2025 Dolucaspor
