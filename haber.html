@@ -2,34 +2,29 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Dolucaspor - Haber</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{font-family:Arial;background:#0b0b0b;color:#fff;margin:0}
-header{background:#111;padding:20px 30px;border-bottom:3px solid #003cff}
-a{color:#4da6ff;text-decoration:none}
-article{max-width:900px;margin:50px auto;padding:20px}
-</style>
+<title>Haber</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-  <a href="index.html">← Ana Sayfa</a>
+  <a href="index.html">← Geri</a>
 </header>
 
-<article id="haber"></article>
+<main id="haber-detay"></main>
 
 <script>
-const id=new URLSearchParams(window.location.search).get("id");
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
 fetch("news.json")
-.then(r=>r.json())
-.then(data=>{
-  const h=data[id];
-  document.getElementById("haber").innerHTML=`
+.then(r => r.json())
+.then(data => {
+  const h = data.find(x => x.id == id);
+  document.getElementById("haber-detay").innerHTML = `
     <h1>${h.title}</h1>
-    <small>${h.date}</small>
-    <p style="margin-top:20px">${h.content}</p>
+    <img src="${h.image}">
+    <p>${h.content}</p>
   `;
 });
 </script>
