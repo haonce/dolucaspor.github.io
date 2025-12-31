@@ -8,117 +8,138 @@
   <style>
     body {
       margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      background: #0e1116;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
       color: #fff;
     }
 
+    /* TOP BAR */
+    .topbar {
+      background: #000;
+      padding: 10px 30px;
+      font-size: 14px;
+      color: #aaa;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* HEADER */
     header {
-      background: #05070a;
-      padding: 25px;
-      border-bottom: 3px solid #0a3cff;
+      background: #111;
+      padding: 25px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid #003cff;
     }
 
     header h1 {
       margin: 0;
-      font-size: 36px;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      display: flex;
-      gap: 30px;
-      margin-top: 10px;
+      letter-spacing: 3px;
     }
 
     nav a {
-      color: #9bb2ff;
-      cursor: pointer;
+      color: #fff;
+      margin-left: 30px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: #fff;
+      color: #4da6ff;
     }
 
-    section {
-      display: none;
+    /* HERO */
+    .hero {
+      background: url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      height: 420px;
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+    }
+
+    .hero-box {
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      max-width: 600px;
+    }
+
+    .hero-box h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    /* CONTENT */
+    .content {
       max-width: 1200px;
       margin: auto;
       padding: 40px 20px;
-    }
-
-    section.active {
-      display: block;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #0a3cff, #000);
-      border-radius: 12px;
-      padding: 40px;
-      margin-bottom: 40px;
-    }
-
-    .hero h2 {
-      margin-top: 0;
-      font-size: 32px;
-    }
-
-    .news-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
     }
 
-    .news-card {
-      background: #141824;
-      border-radius: 10px;
-      padding: 20px;
+    /* NEWS */
+    .news-item {
+      border-bottom: 1px solid #222;
+      padding: 15px 0;
     }
 
-    .news-card h3 {
-      margin-top: 0;
-      color: #6f8bff;
-    }
-
-    .news-card span {
+    .news-item span {
       font-size: 13px;
-      color: #aaa;
+      color: #888;
+    }
+
+    .news-item h3 {
+      margin: 8px 0;
+      color: #4da6ff;
+    }
+
+    /* SIDE BOX */
+    .side-box {
+      background: #111;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .side-box h3 {
+      margin-top: 0;
+      border-bottom: 2px solid #003cff;
+      padding-bottom: 10px;
     }
 
     footer {
-      background: #05070a;
-      padding: 20px;
+      background: #000;
       text-align: center;
+      padding: 20px;
       color: #777;
       font-size: 14px;
-      margin-top: 40px;
+    }
+
+    @media(max-width: 900px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 
   <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-
     async function loadNews() {
       const res = await fetch("news.json");
       const news = await res.json();
-      const container = document.getElementById("newsContainer");
+      const container = document.getElementById("news");
 
       container.innerHTML = "";
 
       news.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "news-card";
-        card.innerHTML = `
-          <span>${item.date}</span>
-          <h3>${item.title}</h3>
-          <p>${item.content}</p>
+        container.innerHTML += `
+          <div class="news-item">
+            <span>${item.date}</span>
+            <h3>${item.title}</h3>
+            <p>${item.content}</p>
+          </div>
         `;
-        container.appendChild(card);
       });
     }
 
@@ -127,25 +148,55 @@
 </head>
 <body>
 
+<div class="topbar">
+  <div>Dolucaspor Resmi Taraftar Sitesi</div>
+  <div>Mavi • Siyah</div>
+</div>
+
 <header>
   <h1>DOLUCASPOR</h1>
   <nav>
-    <a onclick="showSection('anasayfa')">Ana Sayfa</a>
-    <a onclick="showSection('haberler')">Haberler</a>
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Haberler</a>
+    <a href="#">Kadro</a>
+    <a href="#">Fikstür</a>
   </nav>
 </header>
 
-<section id="anasayfa" class="active">
-  <div class="hero">
-    <h2>Mavi-Siyah Bir Tutku</h2>
-    <p>Dolucaspor’un güncel haberleri, gelişmeleri ve kulüp duyuruları.</p>
+<div class="hero">
+  <div class="hero-box">
+    <h2>Dolucaspor Yeni Sezona Hazır</h2>
+    <p>Mavi-siyahlılar çalışmalarını yoğun tempoda sürdürüyor.</p>
   </div>
-</section>
+</div>
 
-<section id="haberler">
-  <h2>Güncel Haberler</h2>
-  <div class="news-grid" id="newsContainer"></div>
-</section>
+<div class="content">
+  <!-- HABERLER -->
+  <div>
+    <h2>Haberler</h2>
+    <div id="news"></div>
+  </div>
+
+  <!-- SAĞ TARAF -->
+  <div>
+    <div class="side-box">
+      <h3>Sıradaki Maç</h3>
+      <p>
+        Dolucaspor vs Kartalspor<br>
+        📅 12 Mart<br>
+        🏟️ Doluca Stadı
+      </p>
+    </div>
+
+    <div class="side-box">
+      <h3>Lig Durumu</h3>
+      <p>
+        5. Sıra<br>
+        28 Puan
+      </p>
+    </div>
+  </div>
+</div>
 
 <footer>
   © 2025 Dolucaspor
