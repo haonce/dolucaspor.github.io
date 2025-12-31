@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>Haber</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Haberler | Dolucaspor</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <a href="index.html">← Geri</a>
+  <div class="header-inner">
+    <img src="img/logo.png" class="logo">
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="kadro.html">Kadro</a>
+    </nav>
+  </div>
 </header>
 
-<main id="haber-detay"></main>
+<section class="news">
+  <h2>Tüm Haberler</h2>
 
-<script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+  <div class="news-grid">
+    <a href="haberler/haber1.html" class="news-card">
+      <img src="img/haber1.jpg">
+      <h3>Dolucaspor’dan Net Galibiyet</h3>
+      <p>Maç sonrası detaylar...</p>
+    </a>
+  </div>
+</section>
 
-fetch("news.json")
-.then(r => r.json())
-.then(data => {
-  const h = data.find(x => x.id == id);
-  document.getElementById("haber-detay").innerHTML = `
-    <h1>${h.title}</h1>
-    <img src="${h.image}">
-    <p>${h.content}</p>
-  `;
-});
-</script>
+<footer>
+  <p>© 2025 Dolucaspor</p>
+</footer>
 
 </body>
 </html>
