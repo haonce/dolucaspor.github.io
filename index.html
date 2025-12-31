@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>Dolucaspor Resmi Sitesi</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Dolucaspor | Taraftar Sitesi</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <img src="images/logo.png" class="logo">
-  <nav>
-    <a href="index.html">Anasayfa</a>
-    <a href="kadro.html">Kadro</a>
-    <a href="admin.html">Admin</a>
-  </nav>
+  <div class="header-inner">
+    <img src="img/logo.png" class="logo">
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="haberler.html">Haberler</a>
+      <a href="kadro.html">Kadro</a>
+    </nav>
+  </div>
 </header>
 
-<main>
+<section class="hero">
+  <h1>Dolucaspor Taraftar Sitesi</h1>
+  <p>Mavi & Siyahın Sesi</p>
+</section>
+
+<section class="news">
   <h2>Son Haberler</h2>
-  <div id="news-list" class="news-grid"></div>
-</main>
+
+  <div class="news-grid">
+    <a href="haberler/haber1.html" class="news-card">
+      <img src="img/haber1.jpg">
+      <h3>Dolucaspor’dan Net Galibiyet</h3>
+      <p>Maçtan önemli anlar...</p>
+    </a>
+  </div>
+</section>
 
 <footer>
   <div class="social">
@@ -27,9 +41,8 @@
     <a href="#">X</a>
     <a href="#">YouTube</a>
   </div>
-  © 2025 Dolucaspor Taraftar Sitesi
+  <p>© 2025 Dolucaspor Taraftar Sitesi</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
