@@ -13,29 +13,30 @@
       color: #fff;
     }
 
-    /* TOP BAR */
-    .topbar {
-      background: #000;
-      padding: 10px 30px;
-      font-size: 14px;
-      color: #aaa;
-      display: flex;
-      justify-content: space-between;
-    }
-
     /* HEADER */
     header {
       background: #111;
-      padding: 25px 30px;
+      padding: 20px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 3px solid #003cff;
     }
 
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-area img {
+      height: 60px;
+    }
+
     header h1 {
       margin: 0;
       letter-spacing: 3px;
+      font-size: 26px;
     }
 
     nav a {
@@ -121,6 +122,10 @@
       .content {
         grid-template-columns: 1fr;
       }
+
+      nav a {
+        margin-left: 15px;
+      }
     }
   </style>
 
@@ -148,13 +153,13 @@
 </head>
 <body>
 
-<div class="topbar">
-  <div>Dolucaspor Resmi Taraftar Sitesi</div>
-  <div>Mavi • Siyah</div>
-</div>
-
 <header>
-  <h1>DOLUCASPOR</h1>
+  <div class="logo-area">
+    <!-- LOGO BURAYA -->
+    <img src="logo.png" alt="Dolucaspor Logo">
+    <h1>DOLUCASPOR</h1>
+  </div>
+
   <nav>
     <a href="#">Ana Sayfa</a>
     <a href="#">Haberler</a>
@@ -166,7 +171,7 @@
 <div class="hero">
   <div class="hero-box">
     <h2>Dolucaspor Yeni Sezona Hazır</h2>
-    <p>Mavi-siyahlılar çalışmalarını yoğun tempoda sürdürüyor.</p>
+    <p>Mavi-Siyahlılar lig öncesi hazırlıklarını sürdürüyor.</p>
   </div>
 </div>
 
@@ -182,8 +187,8 @@
     <div class="side-box">
       <h3>Sıradaki Maç</h3>
       <p>
-        Dolucaspor vs Kartalspor<br>
-        📅 12 Mart<br>
+        Dolucaspor vs HCAL Öğretmenler<br>
+        📅 Unclear<br>
         🏟️ Doluca Stadı
       </p>
     </div>
@@ -191,8 +196,8 @@
     <div class="side-box">
       <h3>Lig Durumu</h3>
       <p>
-        5. Sıra<br>
-        28 Puan
+        1. Sıra<br>
+        99 Puan
       </p>
     </div>
   </div>
