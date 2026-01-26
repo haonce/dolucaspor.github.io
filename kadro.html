@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Kadro | Dolucaspor</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Kadro | Dolucaspor</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="header">
-  <div class="header-left">
-    <img src="img/logo.png" class="logo">
-    <span>Dolucaspor Resmi Sitesi</span>
-  </div>
-  <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="haberler.html">Haberler</a>
-    <a href="kadro.html">Kadro</a>
-  </nav>
+<header>
+    <div class="container header-content">
+        <div class="logo">
+            <img src="img/logo.png">
+            <span>DOLUCASPOR</span>
+        </div>
+        <nav>
+            <a href="index.html">Anasayfa</a>
+            <a href="kadro.html" class="active">Kadro</a>
+            <a href="haberler.html">Haberler</a>
+        </nav>
+    </div>
 </header>
 
-<main class="container">
-  <h1>Takım Kadrosu</h1>
+<section class="section container">
+    <h2>A Takım Kadrosu</h2>
 
-  <div class="players">
-    <a href="oyuncular/hamza-ozer.html" class="player">
-      <img src="img/players/hamza.jpg">
-      <h3>Hamza Özer (C)</h3>
-      <span>Orta Saha</span>
-    </a>
-  </div>
-</main>
+    <div class="player-grid">
+        <div class="player-card">
+            <img src="img/oyuncular/oyuncu1.jpg">
+            <h4>Ahmet Yılmaz</h4>
+            <span>Kaleci</span>
+        </div>
 
-<footer>© 2025 Dolucaspor</footer>
+        <div class="player-card">
+            <img src="img/oyuncular/oyuncu2.jpg">
+            <h4>Mehmet Kaya</h4>
+            <span>Defans</span>
+        </div>
+
+        <div class="player-card">
+            <img src="img/oyuncular/oyuncu3.jpg">
+            <h4>Can Demir</h4>
+            <span>Forvet</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Dolucaspor Kulübü
+</footer>
 
 </body>
 </html>
