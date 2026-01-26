@@ -311,6 +311,66 @@ nav a.active {
 .squad-item.captain {
     border-left: 4px solid #0a1aff;
 }
+/* DEFAULT OYUNCU FOTO */
+.player-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #0a1aff;
+}
+
+/* FORMA NUMARASI */
+.jersey-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #0a1aff;
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+/* KADRO ITEM GÜNCEL */
+.squad-item {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, #111111, #1a1a1a);
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.55);
+    gap: 15px;
+}
+
+.squad-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.position-badge {
+    font-size: 14px;
+    color: #0a1aff;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+/* KAPTAN */
+.cap-badge {
+    background-color: #0a1aff;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 6px;
+    border-radius: 6px;
+    margin-left: 8px;
+}
+
+.squad-item.captain {
+    border-left: 4px solid #0a1aff;
+}
 
 
 }
