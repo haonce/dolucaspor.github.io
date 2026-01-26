@@ -256,6 +256,49 @@ footer {
 nav a.active {
     color: #0a1aff;
     } 
+   /* =====================
+   KADRO – LİSTE TASARIMI
+===================== */
+.squad-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.squad-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(145deg, #111111, #1a1a1a);
+    padding: 14px 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.55);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.squad-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+.squad-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #0a1aff;
+}
+
+.squad-info h4 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.squad-info span {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
 
 }
 
