@@ -298,6 +298,19 @@ nav a.active {
     font-size: 14px;
     color: #bdbdbd;
 }
+/* KAPTAN ROZETİ */
+.cap-badge {
+    background-color: #0a1aff;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 6px;
+    border-radius: 6px;
+    margin-left: 6px;
+}
+
+.squad-item.captain {
+    border-left: 4px solid #0a1aff;
+}
 
 
 }
