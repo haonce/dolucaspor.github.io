@@ -449,6 +449,37 @@ nav a.active {
     border-radius: 6px;
     margin-left: 8px;
 }
+.news-card {
+  background: #111;
+  border-left: 4px solid #1e90ff;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.news-card h2 {
+  margin: 0;
+  color: #1e90ff;
+}
+
+.date {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.staff-table th, .staff-table td {
+  border-bottom: 1px solid #333;
+  padding: 12px;
+}
+
+.staff-table th {
+  text-align: left;
+  color: #1e90ff;
+}
 
 
 }
