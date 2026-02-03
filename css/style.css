@@ -371,6 +371,84 @@ nav a.active {
 .squad-item.captain {
     border-left: 4px solid #0a1aff;
 }
+/* =====================
+   TRANSFERMARKT TARZI KADRO
+===================== */
+
+.tm-squad {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: #111;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tm-squad tr {
+    border-bottom: 1px solid #222;
+}
+
+.tm-squad tr:last-child {
+    border-bottom: none;
+}
+
+.tm-squad td {
+    padding: 14px 16px;
+    vertical-align: middle;
+}
+
+.tm-number {
+    width: 50px;
+    text-align: center;
+}
+
+.tm-number span {
+    width: 34px;
+    height: 34px;
+    background-color: #0a1aff;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.tm-player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.tm-player img {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid #0a1aff;
+}
+
+.tm-info strong {
+    font-size: 17px;
+    font-weight: 600;
+    display: block;
+}
+
+.tm-info span {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+/* KAPTAN */
+.tm-captain strong::after {
+    content: " KAPTAN";
+    font-size: 11px;
+    background-color: #0a1aff;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 6px;
+    margin-left: 8px;
+}
 
 
 }
