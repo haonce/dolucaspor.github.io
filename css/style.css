@@ -1,638 +1,39 @@
-/* =====================
-   RESET & TEMEL AYARLAR
-===================== */
+/* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #0b0b0b;
-    color: #ffffff;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* =====================
-   HEADER
-===================== */
-header {
-    background: linear-gradient(90deg, #050b2e, #000000);
-    border-bottom: 3px solid #0a1aff;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo img {
-    height: 55px;
-}
-
-.logo span {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
+  background-color: #0b0f14;
+  color: #ffffff;
 }
 
 /* NAVBAR */
-nav a {
-    margin-left: 22px;
-    font-size: 15px;
-    font-weight: 500;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #0a1aff;
-    transition: 0.3s;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-/* =====================
-   HERO / BANNER
-===================== */
-.hero {
-    background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-        url("../img/haberler/haber1.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 120px 20px;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #d0d0d0;
-}
-
-/* =====================
-   BÖLÜMLER
-===================== */
-.section {
-    padding: 60px 0;
-}
-
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    border-left: 5px solid #0a1aff;
-    padding-left: 15px;
-}
-
-/* =====================
-   MAÇ KARTI
-===================== */
-.match-card {
-    background: linear-gradient(145deg, #111111, #1a1a1a);
-    border-radius: 12px;
-    padding: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-    font-size: 20px;
-}
-
-.match-card strong {
-    font-size: 28px;
-    color: #0a1aff;
-}
-
-/* =====================
-   HABERLER
-===================== */
-.news {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.news-card {
-    background-color: #141414;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.news-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
-}
-
-.news-card img {
-    height: 180px;
-    object-fit: cover;
-}
-
-.news-card h3 {
-    font-size: 18px;
-    margin: 15px;
-}
-
-.news-card p {
-    font-size: 14px;
-    margin: 0 15px 20px;
-    color: #cccccc;
-}
-
-/* =====================
-   KADRO / OYUNCU KARTI
-===================== */
-.player-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-.player-card {
-    background: linear-gradient(160deg, #0e0e0e, #1c1c1c);
-    border-radius: 14px;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    transition: transform 0.3s;
-}
-
-.player-card:hover {
-    transform: translateY(-8px);
-}
-
-.player-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: auto;
-    margin-bottom: 15px;
-    border: 3px solid #0a1aff;
-}
-
-.player-card h4 {
-    font-size: 17px;
-    margin-bottom: 5px;
-}
-
-.player-card span {
-    font-size: 14px;
-    color: #aaaaaa;
-}
-
-/* =====================
-   FOOTER
-===================== */
-footer {
-    background-color: #050505;
-    border-top: 2px solid #0a1aff;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #bbbbbb;
-}
-
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav a {
-        margin-left: 12px;
-        margin-right: 12px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-  nav a.active::after {
-    width: 100%;
-}
-nav a.active {
-    color: #0a1aff;
-    } 
-   /* =====================
-   KADRO – LİSTE TASARIMI
-===================== */
-.squad-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.squad-item {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    background: linear-gradient(145deg, #111111, #1a1a1a);
-    padding: 14px 18px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.55);
-    transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.squad-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-}
-
-.squad-item img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-    border: 2px solid #0a1aff;
-}
-
-.squad-info h4 {
-    font-size: 17px;
-    margin-bottom: 4px;
-}
-
-.squad-info span {
-    font-size: 14px;
-    color: #bdbdbd;
-}
-/* KAPTAN ROZETİ */
-.cap-badge {
-    background-color: #0a1aff;
-    color: #fff;
-    font-size: 11px;
-    padding: 3px 6px;
-    border-radius: 6px;
-    margin-left: 6px;
-}
-
-.squad-item.captain {
-    border-left: 4px solid #0a1aff;
-}
-/* DEFAULT OYUNCU FOTO */
-.player-photo {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-    border: 2px solid #0a1aff;
-}
-
-/* FORMA NUMARASI */
-.jersey-number {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #0a1aff;
-    color: #fff;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    font-size: 15px;
-}
-
-/* KADRO ITEM GÜNCEL */
-.squad-item {
-    display: flex;
-    align-items: center;
-    background: linear-gradient(145deg, #111111, #1a1a1a);
-    padding: 16px 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.55);
-    gap: 15px;
-}
-
-.squad-info h4 {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.position-badge {
-    font-size: 14px;
-    color: #0a1aff;
-    margin-left: 6px;
-    font-weight: 500;
-}
-
-/* KAPTAN */
-.cap-badge {
-    background-color: #0a1aff;
-    color: #fff;
-    font-size: 11px;
-    padding: 3px 6px;
-    border-radius: 6px;
-    margin-left: 8px;
-}
-
-.squad-item.captain {
-    border-left: 4px solid #0a1aff;
-}
-/* =====================
-   TRANSFERMARKT TARZI KADRO
-===================== */
-
-.tm-squad {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 30px;
-    background-color: #111;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.tm-squad tr {
-    border-bottom: 1px solid #222;
-}
-
-.tm-squad tr:last-child {
-    border-bottom: none;
-}
-
-.tm-squad td {
-    padding: 14px 16px;
-    vertical-align: middle;
-}
-
-.tm-number {
-    width: 50px;
-    text-align: center;
-}
-
-.tm-number span {
-    width: 34px;
-    height: 34px;
-    background-color: #0a1aff;
-    color: #fff;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-}
-
-.tm-player {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.tm-player img {
-    width: 42px;
-    height: 42px;
-    border-radius: 6px;
-    object-fit: cover;
-    border: 2px solid #0a1aff;
-}
-
-.tm-info strong {
-    font-size: 17px;
-    font-weight: 600;
-    display: block;
-}
-
-.tm-info span {
-    font-size: 14px;
-    color: #bdbdbd;
-}
-
-/* KAPTAN */
-.tm-captain strong::after {
-    content: " KAPTAN";
-    font-size: 11px;
-    background-color: #0a1aff;
-    color: #fff;
-    padding: 3px 6px;
-    border-radius: 6px;
-    margin-left: 8px;
-}
-.news-card {
-  background: #111;
-  border-left: 4px solid #1e90ff;
-  padding: 16px;
-  margin-bottom: 20px;
-}
-
-.news-card h2 {
-  margin: 0;
-  color: #1e90ff;
-}
-
-.date {
-  font-size: 13px;
-  color: #aaa;
-}
-
-.staff-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.staff-table th, .staff-table td {
-  border-bottom: 1px solid #333;
-  padding: 12px;
-}
-
-.staff-table th {
-  text-align: left;
-  color: #1e90ff;
-}
-
-.page {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.history-box {
-  background: #111;
-  padding: 30px;
-  border-radius: 10px;
-}
-
-.history-logo {
-  width: 140px;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.staff-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.staff-table th, .staff-table td {
-  padding: 14px;
-  border-bottom: 1px solid #333;
-}
-
-.staff-table th {
-  color: #1e90ff;
-}
-
-.news-card {
-  display: flex;
-  gap: 20px;
-  background: #111;
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.news-card img {
-  width: 160px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.date {
-  font-size: 13px;
-  color: #aaa;
-}
-
-.active {
-  color: #1e90ff;
-  font-weight: bold;
-}
-
-/* HABERLER SAYFASI */
-
-.news-page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.page-title {
-  margin-bottom: 30px;
-  font-size: 28px;
-  border-left: 5px solid #1e90ff;
-  padding-left: 15px;
-}
-
-.news-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.news-item {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 20px;
-  background: #111;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.news-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.news-content {
-  padding: 20px;
-}
-
-.news-content h2 {
-  margin: 0 0 8px;
-  font-size: 20px;
-  color: #fff;
-}
-
-.news-date {
-  display: block;
-  font-size: 13px;
-  color: #aaa;
-  margin-bottom: 10px;
-}
-
-.news-content p {
-  color: #ddd;
-  line-height: 1.5;
-}
-
-/* MOBİL UYUMLU */
-@media (max-width: 768px) {
-  .news-item {
-    grid-template-columns: 1fr;
-  }
-
-  .news-item img {
-    height: 200px;
-  }
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0f0f0f;
-  color: #fff;
-}
-
-/* NAV */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 15px 40px;
-  background: #000;
+  background-color: #000000;
 }
 
-.logo {
+.navbar .logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.logo img {
+.navbar .logo img {
+  width: 40px;
   height: 40px;
+}
+
+.navbar .logo span {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .navbar ul {
@@ -641,53 +42,63 @@ body {
   gap: 25px;
 }
 
-.navbar a {
+.navbar ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-weight: 500;
+  padding: 6px 0;
 }
 
-.navbar a.active {
-  color: #1e90ff;
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  border-bottom: 2px solid #1e90ff;
+}
+
+/* SECTION TITLE */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin: 40px 0 30px;
 }
 
 /* HABERLER */
 .news-section {
+  padding: 0 40px 60px;
+}
+
+.news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 40px;
 }
 
 .news-card {
-  background: #111;
-  border-radius: 18px;
+  background-color: #11161d;
+  border-radius: 14px;
   overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.news-card:hover {
-  transform: translateY(-6px);
 }
 
 .news-card img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
+  display: block;
 }
 
 .news-content {
-  padding: 18px;
+  padding: 15px;
 }
 
-.news-content h3 {
-  margin: 0 0 8px;
+.news-content h2 {
   font-size: 18px;
+  margin-bottom: 8px;
 }
 
-.news-content span {
+.news-date {
   font-size: 13px;
   color: #aaa;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .news-content p {
@@ -695,7 +106,57 @@ body {
   line-height: 1.5;
   color: #ddd;
 }
-   
-   
+
+/* KADRO */
+.squad-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  border-collapse: collapse;
 }
 
+.squad-table tr {
+  border-bottom: 1px solid #222;
+}
+
+.squad-table td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.squad-table img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* TEKNİK EKİP & TARİHÇE */
+.content-box {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  background-color: #11161d;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.content-box h2 {
+  margin-bottom: 15px;
+}
+
+.content-box p {
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
